@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Task.TaskActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wednesday"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:id="@+id/textViewDecription"
+                android:fontFamily="@font/primary_regular"
+                android:textColor="@color/red"
+                android:layout_gravity="center_horizontal"/>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#ffdead"
+        android:id="@+id/emptyStateTaskActivity"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="For Starting Click On Bottom Button!"
+            android:textColor="#008aff"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#EBE9E9"
+        android:id="@+id/linearTask"
+        android:visibility="gone"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="4dp"
+        android:id="@+id/rvTaskActivity"/>
+
+    </LinearLayout>
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/shimmerTask"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <include layout="@layout/task_list_shimmer"/>
+            <include layout="@layout/task_list_shimmer"/>
+            <include layout="@layout/task_list_shimmer"/>
+            <include layout="@layout/task_list_shimmer"/>
+            <include layout="@layout/task_list_shimmer"/>
+            <include layout="@layout/task_list_shimmer"/>
+            <include layout="@layout/task_list_shimmer"/>
+            <include layout="@layout/task_list_shimmer"/>
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#f36259"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="12dp"
+        android:id="@+id/addTaskBtn"
+        android:text="Add Task"
+        android:gravity="center"
+        android:textColor="@color/white"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

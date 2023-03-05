@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Day.DayActivity">
+<com.google.android.material.appbar.AppBarLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To Do List"
+            android:textColor="#f36259"
+            android:textStyle="bold"
+            android:fontFamily="@font/primary_regular"
+            android:textSize="18sp"
+            android:layout_gravity="center_horizontal"/>
+    </androidx.appcompat.widget.Toolbar>
+</com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#EFE2CF"
+        android:visibility="gone"
+        android:id="@+id/emptyStateMainActivity"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        >
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/task_empty_state"
+            android:adjustViewBounds="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="For Starting Click On Bottom Button!"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/red"/>
+    </LinearLayout>
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/shimmerDay"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/day_list_shimmer" />
+
+            <include layout="@layout/day_list_shimmer" />
+
+            <include layout="@layout/day_list_shimmer" />
+
+            <include layout="@layout/day_list_shimmer" />
+
+            <include layout="@layout/day_list_shimmer" />
+
+            <include layout="@layout/day_list_shimmer" />
+
+            <include layout="@layout/day_list_shimmer" />
+
+            <include layout="@layout/day_list_shimmer" />
+
+            <include layout="@layout/day_list_shimmer" />
+
+            <include layout="@layout/day_list_shimmer" />
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#EBE9E9"
+        android:id="@+id/mainLinearLayout"
+        android:visibility="gone"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        >
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rvDayList"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#f36259"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="12dp"
+        android:id="@+id/addDayBtn"
+        android:text="Add a Day"
+        android:gravity="center"
+        android:textColor="@color/white"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
